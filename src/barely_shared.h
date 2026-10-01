@@ -10,7 +10,7 @@
 // Shared between barely.exe (injector) and barely_tap.dll (runs inside explorer.exe).
 
 inline constexpr wchar_t kVersion[] = L"" BARELY_VERSION_STR;
-inline constexpr wchar_t kRepoUrl[] = L"https://github.com/AayuShen/Barely";
+inline constexpr wchar_t kRepoUrl[] = L"https://github.com/AayuShen/Barely-There-Taskbar";
 
 // {622816ED-EA44-44EB-8CC0-8AB2F581F3CC}
 inline constexpr CLSID CLSID_BarelyTap = {

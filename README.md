@@ -1,9 +1,9 @@
-# Barely
+# Barely - A Taskbar That's Barely There
 
 A transparent taskbar for Windows 11, with nothing left running in the background.
 
-[![Build](https://github.com/AayuShen/Barely/actions/workflows/build.yml/badge.svg)](https://github.com/AayuShen/Barely/actions/workflows/build.yml)
-[![Release](https://img.shields.io/github/v/release/AayuShen/Barely)](https://github.com/AayuShen/Barely/releases/latest)
+[![Build](https://github.com/AayuShen/Barely-There-Taskbar/actions/workflows/build.yml/badge.svg)](https://github.com/AayuShen/Barely-There-Taskbar/actions/workflows/build.yml)
+[![Release](https://img.shields.io/github/v/release/AayuShen/Barely-There-Taskbar)](https://github.com/AayuShen/Barely-There-Taskbar/releases/latest)
 
 Most taskbar tools stay running all day to keep re-applying their effect. Barely
 doesn't. It loads a tiny DLL into Explorer, styles the taskbar from the inside, and
@@ -11,7 +11,7 @@ exits after about a second. No tray icon and no extra process in Task Manager.
 
 ## Install
 
-1. Download the latest zip from [Releases](https://github.com/AayuShen/Barely/releases/latest).
+1. Download the latest zip from [Releases](https://github.com/AayuShen/Barely-There-Taskbar/releases/latest).
 2. Extract it somewhere you'll keep it.
 3. Open a terminal in that folder and run `.\barely.exe`.
 
@@ -49,13 +49,13 @@ Barely prints what happened and exits with a code, so scripts can check it too.
 | 1 | "your settings aren't reaching it" | You ran it from inside a sandboxed app. Use a normal terminal or Win+R. |
 | 1 | "The taskbar isn't running" | Explorer hasn't started yet. Wait a few seconds and try again. |
 | 2 | The help text | Something in the command was mistyped. Check `barely --help`. |
-| 3 | "couldn't find the taskbar background" | A Windows update probably changed the taskbar. Run `barely --diagnose` and [open an issue](https://github.com/AayuShen/Barely/issues) with the report. |
+| 3 | "couldn't find the taskbar background" | A Windows update probably changed the taskbar. Run `barely --diagnose` and [open an issue](https://github.com/AayuShen/Barely-There-Taskbar/issues) with the report. |
 | 4 | "barely_tap.dll is missing or has been modified" | The files are damaged or were changed. Download a fresh copy from Releases. |
 | 5 | "Run Barely as a normal user" | You started it as administrator. Run it normally. |
 | 6 | "Barely needs Windows 11" | Windows 10 isn't supported. |
 
 For anything else, run `barely --diagnose` and
-[open an issue](https://github.com/AayuShen/Barely/issues) with the report.
+[open an issue](https://github.com/AayuShen/Barely-There-Taskbar/issues) with the report.
 
 ## How it works
 

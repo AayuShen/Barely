@@ -6,6 +6,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/), and versions
 
 ## [Unreleased]
 
+### Changed
+- Full title: **Barely - A Taskbar That's Barely There**. The repository moved to
+  `AayuShen/Barely-There-Taskbar`; links in the app and docs point there (old links redirect).
+
 ## [1.1.1] - 2026-10-01
 
 Security hardening from the first CodeQL scan.
