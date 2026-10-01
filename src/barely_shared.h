@@ -1,5 +1,5 @@
 // Barely — a transparent Windows 11 taskbar with no background process.
-// Created by AayuShen. Copyright (c) 2026 AayuShen. All rights reserved.
+// Created by AayuShen. Copyright (c) 2026 AayuShen. Licensed under the MIT License.
 #pragma once
 #include <windows.h>
 

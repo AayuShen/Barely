@@ -17,6 +17,7 @@ First release.
   `--version`.
 - `barelyw.exe`, a windowless build used for autostart so no console window flashes.
 - Version resources with author and copyright information in all binaries.
+- MIT License.
 
 ### Security
 - SHA-256 integrity check of `barely_tap.dll`, embedded at build time.

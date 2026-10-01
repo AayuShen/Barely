@@ -1,5 +1,5 @@
 // Barely — a transparent Windows 11 taskbar with no background process.
-// Created by AayuShen. Copyright (c) 2026 AayuShen. All rights reserved.
+// Created by AayuShen. Copyright (c) 2026 AayuShen. Licensed under the MIT License.
 //
 // barely.exe / barelyw.exe — saves the opacity, loads barely_tap.dll into explorer once,
 // then exits. barelyw.exe is the same program built as a GUI app (no console window) for

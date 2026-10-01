@@ -3,7 +3,7 @@
 **A transparent Windows 11 taskbar with no background process.**
 
 > Barely was created solely by **AayuShen**.
-> Copyright (c) 2026 AayuShen. All rights reserved.
+> Copyright (c) 2026 AayuShen. Released under the [MIT License](LICENSE).
 
 `barely.exe` runs for about a second and exits. It loads a small DLL into
 `explorer.exe`, which sets the opacity of the taskbar's background. The DLL stays
@@ -111,6 +111,9 @@ Delete the folder and `HKCU\Software\Barely`.
 | [CHANGELOG.md](CHANGELOG.md) | Release notes per version |
 | [devlog/](devlog/) | Development log entries |
 
-## Author
+## Author and license
 
 Barely was designed and created solely by **AayuShen**.
+
+Released under the [MIT License](LICENSE). You're free to use, modify and share it,
+as long as the copyright notice crediting AayuShen is kept.

@@ -1,4 +1,4 @@
-// Barely - created by AayuShen. Copyright (c) 2026 AayuShen. All rights reserved.
+// Barely - created by AayuShen. Copyright (c) 2026 AayuShen. Licensed under the MIT License.
 #include <winver.h>
 
 #ifdef BARELY_DLL
@@ -28,7 +28,7 @@ BEGIN
             VALUE "FileDescription", BARELY_DESC
             VALUE "FileVersion", "1.0.0"
             VALUE "InternalName", BARELY_FILE
-            VALUE "LegalCopyright", "Copyright (c) 2026 AayuShen. All rights reserved."
+            VALUE "LegalCopyright", "Copyright (c) 2026 AayuShen. Licensed under the MIT License."
             VALUE "OriginalFilename", BARELY_FILE
             VALUE "ProductName", "Barely"
             VALUE "ProductVersion", "1.0.0"
