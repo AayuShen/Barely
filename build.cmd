@@ -48,11 +48,11 @@ rc /nologo /DBARELY_DLL /fo build\barely_tap.res src\barely.rc || exit /b 1
 rc /nologo /fo build\barely.res src\barely.rc || exit /b 1
 
 cl %CFLAGS% /LD src\barely_tap.cpp build\barely_tap.res /Fobuild\ /Fe:build\barely_tap.dll ^
-    /link %LFLAGS% /DEF:src\barely_tap.def ole32.lib oleaut32.lib advapi32.lib user32.lib dwmapi.lib windowsapp.lib || exit /b 1
+    /link %LFLAGS% /DEF:src\barely_tap.def ole32.lib oleaut32.lib advapi32.lib user32.lib dwmapi.lib shell32.lib windowsapp.lib || exit /b 1
 
 powershell -NoProfile -ExecutionPolicy Bypass -File tools\embed_hash.ps1 -Dll build\barely_tap.dll -Out build\tap_hash.h || exit /b 1
 
-set "EXELIBS=user32.lib advapi32.lib bcrypt.lib comctl32.lib comdlg32.lib gdi32.lib"
+set "EXELIBS=user32.lib advapi32.lib bcrypt.lib comctl32.lib comdlg32.lib gdi32.lib shell32.lib ole32.lib"
 
 cl %CFLAGS% /Ibuild src\barely.cpp build\barely.res /Fobuild\barely.obj /Fe:build\barely.exe ^
     /link %LFLAGS% /MANIFEST:NO /SUBSYSTEM:CONSOLE %EXELIBS% || exit /b 1

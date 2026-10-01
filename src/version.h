@@ -2,5 +2,5 @@
 // Plain macros only: this file is also read by the resource compiler.
 #pragma once
 
-#define BARELY_VERSION_STR "1.1.0"
-#define BARELY_VERSION_RC 1, 1, 0, 0
+#define BARELY_VERSION_STR "1.1.1"
+#define BARELY_VERSION_RC 1, 1, 1, 0

@@ -2,6 +2,8 @@
 // Created by AayuShen. Copyright (c) 2026 AayuShen. Licensed under the MIT License.
 #pragma once
 #include <windows.h>
+#include <knownfolders.h>
+#include <shlobj.h>
 
 #include "version.h"
 
@@ -70,10 +72,16 @@ inline Settings ReadSettings() {
     return s;
 }
 
-// %LOCALAPPDATA%\Barely\diagnose.txt
+// %LOCALAPPDATA%\Barely\diagnose.txt, resolved through the shell's known-folder API rather
+// than the (easily altered) environment variable.
 inline bool DiagnosePath(wchar_t (&path)[MAX_PATH]) {
-    DWORD n = GetEnvironmentVariableW(L"LOCALAPPDATA", path, MAX_PATH);
-    if (!n || n > MAX_PATH - 24) return false;
+    PWSTR base = nullptr;
+    if (FAILED(SHGetKnownFolderPath(FOLDERID_LocalAppData, KF_FLAG_DONT_VERIFY, nullptr, &base)))
+        return false;
+    bool const fits = lstrlenW(base) < MAX_PATH - 24;
+    if (fits) lstrcpyW(path, base);
+    CoTaskMemFree(base);
+    if (!fits) return false;
     lstrcatW(path, L"\\Barely");
     CreateDirectoryW(path, nullptr);
     lstrcatW(path, L"\\diagnose.txt");

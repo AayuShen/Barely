@@ -802,6 +802,13 @@ void ShowTint() {
 bool Checked(HWND h) { return SendMessageW(h, BM_GETCHECK, 0, 0) == BST_CHECKED; }
 int SliderPos(HWND h) { return static_cast<int>(SendMessageW(h, TBM_GETPOS, 0, 0)); }
 
+// Window procedure for 'barely --settings'. Every control writes its setting to the registry
+// as soon as it changes; the DLL inside Explorer picks that up and restyles the taskbar live,
+// so this window never talks to Explorer directly.
+//   WM_CREATE      build the controls and load the current settings into them
+//   WM_HSCROLL     slider moved: opacity, or maximized opacity when that option is on
+//   WM_COMMAND     checkboxes, colour picker, autostart, restore, close
+//   WM_DPICHANGED  re-layout for the new monitor's scaling
 LRESULT CALLBACK SettingsProc(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
     case WM_CREATE: {

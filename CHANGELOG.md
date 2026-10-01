@@ -6,6 +6,23 @@ The format follows [Keep a Changelog](https://keepachangelog.com/), and versions
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-10-01
+
+Security hardening from the first CodeQL scan.
+
+### Security
+- The `--diagnose` report path is now resolved with the Windows known-folder API instead of
+  the `LOCALAPPDATA` environment variable, which another process could tamper with
+  (CodeQL `cpp/path-injection`).
+
+### Fixed
+- Opacity values are compared with a small tolerance, because XAML may store them at lower
+  precision than a double. This avoids redundant re-applies.
+
+### Changed
+- CI uses `actions/checkout@v5` and CodeQL Action v4, replacing deprecated versions.
+- Documented the settings window procedure.
+
 ## [1.1.0] - 2026-10-01
 
 Barely now tells you the truth about what happened, survives Explorer restarts, and has

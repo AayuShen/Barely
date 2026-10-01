@@ -102,6 +102,9 @@ void Trace(const char* fmt, ...) {
 #define Trace(...) ((void)0)
 #endif
 
+// XAML may store opacity with less precision than a double, so compare with a tolerance.
+bool Same(double a, double b) { return a < 0 ? b < 0 : (b >= 0 && (a - b < 0.001 && b - a < 0.001)); }
+
 // ---- Applying values (UI thread) ----------------------------------------------------------
 
 winrt::Windows::UI::Color TintColor(int rgb) {
@@ -131,7 +134,7 @@ void ApplyOpacity(wux::UIElement const& el, Target& t, double op) {
                 double const want = (isStroke ? g_strokeOpacity : g_fillOpacity).load();
                 if (want < 0) return;
                 auto e = sender.as<wux::UIElement>();
-                if (e.Opacity() != want) e.Opacity(want);
+                if (!Same(e.Opacity(), want)) e.Opacity(want);
             });
     }
     el.Opacity(op);
@@ -315,7 +318,7 @@ void Recompute() {
         stroke = st / 100.0;
         tint = s.tint;
     }
-    if (fill == g_fillOpacity && stroke == g_strokeOpacity && tint == g_tint) return;
+    if (Same(fill, g_fillOpacity) && Same(stroke, g_strokeOpacity) && tint == g_tint) return;
     g_fillOpacity = fill;
     g_strokeOpacity = stroke;
     g_tint = tint;
