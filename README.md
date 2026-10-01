@@ -37,8 +37,25 @@ Run `barely --help` for every option, and `barely --status` to see what it's doi
   autostart is on.
 - After updating Barely, sign out and back in once so Explorer picks up the new version.
 - It doesn't need admin rights, and it refuses to run as admin.
-- Something broke? Run `barely --diagnose` and
-  [open an issue](https://github.com/AayuShen/Barely/issues) with the report.
+
+## If something goes wrong
+
+Barely prints what happened and exits with a code, so scripts can check it too.
+
+| Code | What you'll see | What it means / what to do |
+|---|---|---|
+| 0 | `Taskbar: opacity 0%, ...` | It worked. |
+| 1 | "a different version of Barely is still loaded" | You updated Barely. Sign out and back in, then run it again. |
+| 1 | "your settings aren't reaching it" | You ran it from inside a sandboxed app. Use a normal terminal or Win+R. |
+| 1 | "The taskbar isn't running" | Explorer hasn't started yet. Wait a few seconds and try again. |
+| 2 | The help text | Something in the command was mistyped. Check `barely --help`. |
+| 3 | "couldn't find the taskbar background" | A Windows update probably changed the taskbar. Run `barely --diagnose` and [open an issue](https://github.com/AayuShen/Barely/issues) with the report. |
+| 4 | "barely_tap.dll is missing or has been modified" | The files are damaged or were changed. Download a fresh copy from Releases. |
+| 5 | "Run Barely as a normal user" | You started it as administrator. Run it normally. |
+| 6 | "Barely needs Windows 11" | Windows 10 isn't supported. |
+
+For anything else, run `barely --diagnose` and
+[open an issue](https://github.com/AayuShen/Barely/issues) with the report.
 
 ## How it works
 
