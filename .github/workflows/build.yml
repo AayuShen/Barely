@@ -1,0 +1,36 @@
+# Barely - created by AayuShen.
+# Builds and tests every push and pull request.
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        shell: cmd
+        run: build.cmd
+
+      - name: Test
+        shell: pwsh
+        run: ./tests/run-tests.ps1
+
+      - name: Upload binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: barely-${{ github.sha }}
+          path: |
+            build/barely.exe
+            build/barelyw.exe
+            build/barely_tap.dll
+          if-no-files-found: error

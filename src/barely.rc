@@ -1,5 +1,6 @@
 // Barely - created by AayuShen. Copyright (c) 2026 AayuShen. Licensed under the MIT License.
 #include <winver.h>
+#include "version.h"
 
 #ifdef BARELY_DLL
 #define BARELY_DESC "Barely taskbar helper (loaded into Explorer)"
@@ -9,11 +10,13 @@
 #define BARELY_DESC "Barely - transparent taskbar"
 #define BARELY_FILE "barely.exe"
 #define BARELY_TYPE VFT_APP
+// Per-monitor DPI awareness, modern common controls, runs as the invoking user.
+1 24 "barely.manifest"
 #endif
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,0
- PRODUCTVERSION 1,0,0,0
+ FILEVERSION BARELY_VERSION_RC
+ PRODUCTVERSION BARELY_VERSION_RC
  FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
  FILEFLAGS 0
  FILEOS VOS_NT_WINDOWS32
@@ -26,12 +29,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "AayuShen"
             VALUE "FileDescription", BARELY_DESC
-            VALUE "FileVersion", "1.0.0"
+            VALUE "FileVersion", BARELY_VERSION_STR
             VALUE "InternalName", BARELY_FILE
             VALUE "LegalCopyright", "Copyright (c) 2026 AayuShen. Licensed under the MIT License."
             VALUE "OriginalFilename", BARELY_FILE
             VALUE "ProductName", "Barely"
-            VALUE "ProductVersion", "1.0.0"
+            VALUE "ProductVersion", BARELY_VERSION_STR
             VALUE "Comments", "Created solely by AayuShen."
         END
     END

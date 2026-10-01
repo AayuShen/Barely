@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest an idea for Barely
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like Barely to do?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it useful?
+  - type: checkboxes
+    id: footprint
+    attributes:
+      label: Barely's promise
+      options:
+        - label: I understand Barely keeps no process running, so features must work from inside Explorer or as one-shot commands.
+          required: true

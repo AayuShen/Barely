@@ -1,0 +1,41 @@
+name: Bug report
+description: Barely isn't working as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! The most useful thing you can attach is the output of `barely --diagnose`.
+        Security problems? Please don't file them here; see SECURITY.md.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you run, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: build
+    attributes:
+      label: Windows build
+      description: Shown by `barely --status` (for example 26100).
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Barely version
+      description: Output of `barely --version`.
+    validations:
+      required: true
+  - type: textarea
+    id: status
+    attributes:
+      label: Output of `barely --status`
+      render: text
+  - type: textarea
+    id: diagnose
+    attributes:
+      label: Output of `barely --diagnose`
+      description: Or attach `%LOCALAPPDATA%\Barely\diagnose.txt`.
+      render: text

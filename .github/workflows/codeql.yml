@@ -1,0 +1,35 @@
+# Barely - created by AayuShen.
+# Static security analysis with GitHub CodeQL (free for public repositories).
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 3 * * 1"  # weekly, Monday 03:17 UTC
+
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
+jobs:
+  analyze:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: c-cpp
+          build-mode: manual
+          queries: security-and-quality
+
+      - name: Build
+        shell: cmd
+        run: build.cmd
+
+      - uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:c-cpp"
