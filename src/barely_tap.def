@@ -1,0 +1,5 @@
+; Barely - created by AayuShen.
+LIBRARY barely_tap
+EXPORTS
+    DllGetClassObject PRIVATE
+    DllCanUnloadNow PRIVATE
