@@ -129,7 +129,7 @@ See [SECURITY.md](SECURITY.md) for the threat model and how to report a problem.
 
 | Build | Version | Status |
 |---|---|---|
-| 26200 | Windows 11 25H2 | Taskbar recognized; automated tests pass |
+| 26200 | Windows 11 25H2 | Verified: fully clear taskbar confirmed on a real desktop; automated tests pass |
 
 Other Windows 11 builds use the same taskbar XAML and will most likely work. Barely
 shows a note on untested builds. Please report results with `barely --status`.
